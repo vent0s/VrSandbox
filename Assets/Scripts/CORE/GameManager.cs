@@ -65,7 +65,10 @@ namespace Septim
              \____/\___|_| |_|\___|_|  \__,_|_|
          */
 
-
+        public void LoadScene(string mapName)
+        {
+            MapManager.instance.StartLoadScene(mapName);
+        }
     }
 }
 
