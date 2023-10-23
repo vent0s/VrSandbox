@@ -1,3 +1,4 @@
+using Septim.Data;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -81,13 +82,12 @@ namespace Septim.Map
         {
             curDestinationScene = destinationScene;
 
-            OnStartLoadScene?.Invoke();
 
             //clear ui state
             //UiManager.instance.InteractionClear();
 
             //Fade screen
-            UiManager.instance.FadeScreen(true, true, null, OnLoadingScene);
+            UiManager.instance.FadeScreen(true, true, OnStartLoadScene, OnLoadingScene);
         }
 
         private void LoadScene()
@@ -99,12 +99,8 @@ namespace Septim.Map
         public void StartLoadedScene(Scene scene, LoadSceneMode mode)
         {
             //Fade out screen
-            UiManager.instance.FadeScreen(false, true, null, OnLoadedScene);
+            UiManager.instance.FadeScreen(false, true, OnStartLoadedScene, OnLoadedScene);
 
-
-
-            //invoke delegation
-            OnLoadedScene?.Invoke();
         }
 
         private void LoadedScene()

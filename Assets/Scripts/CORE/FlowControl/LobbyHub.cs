@@ -1,10 +1,11 @@
+using Septim.Data;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Septim.Data
+namespace Septim.Lobby
 {
-    public class CommandHub : MonoBehaviour
+    public class LobbyHub : CommandHub
     {
         public void SwitchToDriveScene()
         {
